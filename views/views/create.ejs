@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Create Note</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <h2 class="navbar-brand">/NoteSync</h2>
+      <a class="botonLogout"  href="/logout">Home</a>
+    </div>
+  </nav>
+      <div class="container mt-4">
+        <div class="card border-secondary">
+            <div class="card-header">Nuevo Registro</div>
+            <div class="card-body">
+                <form action="/save" method="POST">
+                    <div class="mb-3">
+                        <label for="notas" class="form-label">notas</label>
+                        <input type="text" class="form-control" id="tarea" name="tarea" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="notas" class="form-label">Estado</label>
+                        <select name="rol" id="rol" class="form-select" tabindex="2">
+                            <option value="acabada" selected>Hecha</option>
+                            <option value="sinAcabar" selected>Sin acabar</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                    <a href="/notes" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>  
+        
+      </div>
+</body>
+</html>

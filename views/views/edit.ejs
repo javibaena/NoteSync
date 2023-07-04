@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Edit</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <h2 class="navbar-brand">/NoteSync</h2>     
+      <a class="botonLogout"  href="/logout">Home</a>     
+    </div>
+ </nav>
+      <div class="containerEdit container mt-4">
+        <div class="card border-secondary">
+            <div class="card-header">Editar Nota</div>
+              <div class="card-body">
+               <% if (tarea) { %>
+                 <form action="/update" method="POST">
+                  <input  id="id"  name="id" value= "<%= tarea.id %>"  hidden>
+                    <div class="mb-3">
+                        <label for="notas" class="form-label">Notas</label>
+                        <input type="text" class="form-control" value="<%= tarea.tarea %>" name="tarea" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="notas" class="form-label">Estado</label>
+                        <select name="rol" id="rol" class="form-select" tabindex="2">
+                            <option <%= tarea.rol == 'acabada' ? 'selected' : '' %> value="acabada" selected>Hecha</option>
+                            <option <%= tarea.rol == 'sinAcabar' ? 'selected' : '' %>  value="sinAcabar" selected>Por hacer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                     <a href="/notes" class="btn btn-borrar">Cancelar</a>
+                 </form>
+               <% } %>
+            </div>
+        </div>         
+      </div>
+</body>
+</html>

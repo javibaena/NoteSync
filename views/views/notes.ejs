@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <h2 class="navbar-brand">/NoteSync</h2>     
+          <a class="botonLogout"  href="/logout">Home</a>     
+        </div>
+     </nav>
+  <div class="container">
+        <a href="/create" class="btn  mt-4">
+            <i class='bx bxs-plus-circle'></i>
+        </a>
+        <table class="table table-bordered table-striped text-center mt-4">
+            <thead>
+                <tr class="bg-primary text-white tituloTablas">
+                    <th class="th" scope="col"> id</th>
+                    <th class="th" scope="col">Nota</th>
+                    <th class="th" scope="col">Estado</th>
+                    <th  class="th" scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% results.forEach((notas) => { %>
+              <tr class="casilleros">
+                <td class="td"><%= notas.id %></td>
+                <td class="td tdTarea"><%= notas.tarea %></td>
+                <td class="td"><%= notas.rol %></td>
+                <td class="td"> 
+                  <a href="/edit/<%= notas.id %>" class="btn btn-primary">Edit</a>
+                  <a href="/delete/<%= notas.id %>" class="btn btn-borrar">Delete</a>
+                </td>
+              </tr>
+             <% }) %>
+            </tbody>
+        </table>     
+      </div>
+      <div class="padrevideo">
+        <div class="gifIndex">     
+          <video  class="videoIndex" src="resources/media/giphy.mp4" autoplay loop muted></video>
+        </div>
+      </div>
+     
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <title>Login</title>
+</head>
+<body>
+<div class="marco">
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row border rounded-5 p-3 bg-white shadow box-area"   >
+       <div class="cuadro-subtitulos col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style=" border-radius: 17px;">
+           <div class="featured-image mb-3" ></div>
+           <p class="subtitulo-Login fs-2">Stay organized</p>
+           <small class=" subtitulo-Login  text-wrap text-center" >Create, Read, Update and Delete</small>
+       </div>        
+       <div class="col-md-6 right-box" style="border-radius: 17px;">
+          <div class="row align-items-center">
+                <div class="header-text mb-4">
+                     <h2>/NoteSync</h2>
+                     <p>Log In</p>
+                </div>
+            <form class="formLogin" action="/auth" method="POST">
+                <div class="input-group mb-3 cuadro-user">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" name="user" placeholder="User name" required>
+                </div>
+                <div class="input-group mb-1 cuadro-pass">
+                    <input type="password" name="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" required>
+                </div>
+                <div class="input-group mb-3 boton-login">
+                    <input class="botonAcceso btn btn-lg btn-primary w-100 fs-6" type="submit" value="LOGIN">
+                    <a class="cancelar btn btn-lg text-danger w-100 fs-6 "   href="/">Cancel</a>
+                </div>
+                <div class="row">
+                    <span>No tienes cuenta? <a href="./register">Sign Up</a></span>        
+                </div>
+            </form>
+          </div>
+       </div> 
+      </div>
+    </div>
+</div>
+</body>
+</html>
